@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="15">
+    <title>Site undergoing maintenance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+     :root {
+       --background-color: #fefefe;
+       --color: #010101;
+       @media (prefers-color-scheme: dark) {
+         --color: #fefefe;
+         --background-color: #010101;
+       }
+     }
+     body {
+       background-color: var(--background-color);
+       color: var(--color);
+     }
+     main {
+       max-width: 800px;
+       margin-inline: auto;
+     }
+     #loading {
+       margin-top: 130px;
+       width: max-content;
+       margin-inline: auto;
+     }
+     #loading > *{
+       background-color: #3f6bfc;
+       margin: 3px;
+       border-radius: 50%;
+       width: 20px;
+       height: 20px;
+       display: inline-block;
+       animation: 1s infinite alternate loading;
+     }
+     #loading > *:nth-child(2) {
+       animation-delay: 0.15s;
+       background-color: #713ffc;
+     }
+     #loading > *:nth-child(3) {
+       animation-delay: 0.3s;
+       background-color: #3fc9fc;
+     }
+     #loading > *:nth-child(4) {
+       animation-delay: 0.45s;
+       background-color: #3f6bfc;
+     }
+     @keyframes loading {
+       from {transform: translateY(0px);}
+       50% {transform: translateY(0px);}
+       to {transform: translateY(-30px);}
+     }
+    </style>
+  </head>
+  <body>
+    <main>
+      <picture>
+        <source srcset="discourse-dark.png" media="(prefers-color-scheme: dark)"/>
+        <img src="discourse.png"/>
+      </picture>
+      <h1>Site offline</h1>
+      <p>
+        Please wait while Discourse is being configured.
+        This page will refresh when everything is ready.
+      </p>
+      <div id="loading">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </main>
+  </body>
+</html>
